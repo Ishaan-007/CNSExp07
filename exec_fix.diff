@@ -1,0 +1,6 @@
+// validate host is IP
+if (!filter_var($host, FILTER_VALIDATE_IP)) { echo "Invalid host"; exit; }
+// if must call system, escape:
+$cmd = 'ping -c 1 ' . escapeshellarg($host);
+$output = shell_exec($cmd);
+
